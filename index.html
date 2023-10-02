@@ -1,0 +1,67 @@
+<?php 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Livraria Online</title>
+</head>
+<body>
+
+    <script src="seuarquivo.js"></script>
+    <h1>Bem-vindo à Livraria Online</h1>
+    <p>Insira o valor total da sua compra:</p>
+    <input type="number" id="valorCompra" placeholder="Insira o valor em R$">
+    <button onclick="calcularDesconto()">Calcular Desconto</button>
+    <p>Desconto aplicado: <span id="desconto"></span></p>
+
+    <script>
+        function calcularDesconto() {
+            const valorCompra = parseFloat(document.getElementById('valorCompra').value);
+
+            let desconto = 0;
+
+            if (valorCompra > 200) {
+                desconto = 0.2; // 20%
+            } else if (valorCompra > 100) {
+                desconto = 0.1; // 10%
+            }
+            else if(valorCompra<=100){
+                desconto=0.05;
+
+            }
+
+            const valorDesconto = valorCompra * desconto;
+            document.getElementById('desconto').textContent = `R$ ${valorDesconto.toFixed(2)}`;
+        }
+    </script>
+
+<div class ="container">
+    <div class="grid-item"> 
+        <img src="l.jpg" 
+        width="300" height="200">
+        <img src="livross.jpg" 
+        width="300" height="200">
+        <img src="genero.jpg" 
+        width="300" height="200">
+</div>
+
+<div class ="container">
+<div classs="grid-item">
+    <img src="menina.jpg" 
+    width="1000" height="500" paddign="100px;">
+</div>
+</div>
+
+<div class="text-area">
+    <div class="texto">
+        <table>
+            <td>
+              <tr>1° Livros da montanha</tr>
+              <tr>2° LIvro da escola </tr>
+              <tr>3° A menina que roubava Livros  </tr>
+            </td>
+            
+          </table>
+</div>
+</div>
+</body>
+</html>
